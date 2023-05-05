@@ -1,0 +1,366 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --black:#18122B;
+    --fadeblack: #333333;
+    --purple:#4E31AA;
+    --blue: #2F58CD;
+    --error: #DC3545;
+    --valid: #2FCD94; 
+}
+
+
+
+div.wrapper {
+    padding: 70px 1em;  
+    min-height: 100vh;
+}
+
+div.wrapper h1 {
+    color: var(--black);
+}
+
+div.wrapper p{
+    padding-top: 16px;
+    color: var(--fadeblack);
+}
+
+div.wrapper p > a {
+    color: var(--purple);
+    text-decoration: none;
+}
+
+form.form-content {
+    padding-top: 47px;
+}
+
+/* LABEL */
+div.col label {
+    color: #333333;
+}
+
+div.label-content label {
+    color: #333333;
+}
+
+div.col input {
+    margin-top: 12px;
+    padding: 9px;
+    width: 100%;
+    border-radius: 7px;
+    border: 1px solid #AFAFAF;
+    outline: none;
+}
+
+div.label-content-row {
+    display: flex;
+    gap: 10px;
+}
+
+div.label-content input {
+    margin-top: 12px;
+    padding: 9px;
+    width: 100%;
+    border-radius: 7px;
+    border: 1px solid #AFAFAF;
+    outline: none;
+}
+
+div.label-content {
+    padding-top: 20px;
+    position: relative;
+}
+
+div.label-content-row {
+    padding-top: 20px;
+}
+
+.label-content-row .col {
+    position: relative;
+}
+
+.label-content .row {
+    position: relative;
+}
+
+div.label-content-checkbox input {
+    width: 20px;
+    height: 20px;
+}
+div.label-content-checkbox {
+    padding-top: 30px;
+    align-items: center;
+    gap: 20px;
+    display: flex;
+    color: var(--black);
+}
+
+.btn-signup {
+    margin-top: 80px;
+    width: 100%;
+    padding: 1.4em;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 17px;
+    background: var(--blue);
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-signup:hover {
+    transition: ease-in-out 0.25s;
+    background: #1e3b8b;
+}
+
+div.left-content img {
+    display: none;
+}
+
+div.left-content {
+    display: none;
+}
+
+/* ERROR HANDLING MESSAGE DIALOG*/
+
+.firstname-dialog{
+    padding-top: 6px;
+    font-size: 13px;
+    color: var(--error);
+}
+
+.lastname-dialog{
+    padding-top: 6px;
+    font-size: 13px;
+    color: var(--error);
+}
+
+.email-dialog{
+    padding-top: 6px;
+    font-size: 13px;
+    color: var(--error);
+}
+
+.password-dialog{
+    padding-top: 6px;
+    font-size: 13px;
+    color: var(--error);
+}
+.conpassword-dialog{
+    padding-top: 6px;
+    font-size: 13px;
+    color: var(--error);
+}
+
+.country-dialog{
+    padding-top: 6px;
+    font-size: 13px;
+    color: var(--error);
+}
+
+.phonenumber-dialog{
+    padding-top: 6px;
+    font-size: 13px;
+    color: var(--error);
+}
+
+/* ERROR HANDLING BOARDER*/
+
+.firstname.error{
+    border: 1px solid var(--error);
+}
+
+.firstname.valid{
+    border: 1px solid var(--valid);
+}
+
+.lastname.error{
+    border: 1px solid var(--error);
+}
+
+.lastname.valid{
+    border: 1px solid var(--valid);
+}
+
+.email.error{
+    border: 1px solid var(--error);
+}
+
+.email.valid{
+    border: 1px solid var(--valid);
+}
+
+.password.error{
+    border: 1px solid var(--error);
+}
+
+.password.valid{
+    border: 1px solid var(--valid);
+}
+
+.conpassword.error{
+    border: 1px solid var(--error);
+}
+
+.conpassword.valid{
+    border: 1px solid var(--valid);
+}
+
+.country.error{
+    border: 1px solid var(--error);
+}
+
+.country.valid{
+    border: 1px solid var(--valid);
+}
+
+.phonenumber.error{
+    border: 1px solid var(--error);
+}
+
+.phonenumber.valid{
+    border: 1px solid var(--valid);
+}
+
+/* .error-message{
+    color: var(--error);
+    font-size: 14px;
+} */
+
+/* ERROR HANDLING ICON */
+
+/* COL */
+.label-content-row .col .fa-solid.fa-circle-check{
+    position: absolute;
+    top: 42px;
+    left: 81%;
+    color: var(--valid);
+}
+
+.label-content-row .col .fa-solid.fa-circle-xmark{
+    position: absolute;
+    top: 42px;
+    left: 81%;
+    color: var(--error);
+}
+
+/* ROW */
+.label-content .row .fa-solid.fa-circle-check{
+    position: absolute;
+    top: 42px;
+    left: 91%;
+    color: var(--valid);
+}
+
+.label-content .row .fa-solid.fa-circle-xmark{
+    position: absolute;
+    top: 42px;
+    left: 91%;
+    color: var(--error);
+}
+
+@media screen and (min-width: 518px){
+    div.main div.wrapper{
+        max-width: 518px;
+        margin: 0 auto;
+    }
+
+    /* COL */
+    .label-content-row .col .fa-solid.fa-circle-check{
+        left: 84%;
+      
+    }
+    
+    .label-content-row .col .fa-solid.fa-circle-xmark{
+        left: 84%;
+    }
+
+    /* ROW */
+    .label-content .row .fa-solid.fa-circle-check{
+        position: absolute;
+        top: 42px;
+        left: 92%;
+        color: var(--valid);
+    }
+
+    .label-content .row .fa-solid.fa-circle-xmark{
+        position: absolute;
+        top: 42px;
+        left: 92%;
+        color: var(--error);
+    }
+
+}
+
+@media screen and (min-width: 1200px){
+    div.main{
+        min-height: 100vh;
+        max-width: 1200px;
+        display: grid;
+        margin: 0px auto;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "left right";
+    }
+
+    div.main div.wrapper div.left-content {
+        grid-area: left;
+    }
+
+    h2.header{
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    h2.header span.line{
+        border-bottom: solid 7px #F5F1F1;
+        border-radius: 3px;
+    }
+
+    p.description{
+        padding-top: 10px;
+        color: var(--fadeblack);
+    }
+
+    ul.benefits{
+        padding-top: 40px;
+        list-style: none;
+        display: grid;
+        gap: 18px;
+        line-height: 23px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    li.item-benefit{
+        font-weight: bold;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    li.item-benefit i.fa-solid{
+       color: var(--purple);
+       font-size: 20px;
+    }
+
+    div.left-content img{
+        display: block;
+        padding-top: 30px;
+        width: 100%;
+    }
+
+    div.left-content{
+        display: block;
+    }
+
+    div.main div.wrapper div.right-content{
+        grid-area: right;
+    }
+}

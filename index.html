@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="main">
+        <div class="left-content">
+            <div class="wrapper">
+                <h2 class="header"><span class="line">Join our</span> community today!</h2>
+                <img src="./assets/amico.svg" alt="" draggable="false">
+                <p class="description"><span style="color:#4E31AA">Create</span> an account <span style="color:#4E31AA">and start</span> enjoying <span style="color:#4E31AA">all</span> the benefits of our platform.</p>
+                <ul class="benefits">
+                    <li class="item-benefit"><i class="fa-solid fa-circle-check"></i>Access exclusive content and resources</li>
+                    <li class="item-benefit"><i class="fa-solid fa-circle-check"></i>Connect with other members and experts in your field</li>
+                    <li class="item-benefit"><i class="fa-solid fa-circle-check"></i>Participate in live events and webinars</li>
+                    <li class="item-benefit"><i class="fa-solid fa-circle-check"></i>Receive personalized recommendations and insights</li>
+                    <li class="item-benefit"><i class="fa-solid fa-circle-check"></i>Get early access to new features and products</li>
+                    <li class="item-benefit"><i class="fa-solid fa-circle-check"></i>And much more!</li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="wrapper">
+                <h1>Sign up</h1>
+                <p>Already have an account? <a href="#" class="login">Log in instead.</a></p>
+                <form class="form-content" id="form-value">
+                    <div class="label-content-row">
+                        <div class="col">
+                            <label>First name</label>
+                                <input type="text" class="firstname" id="firstname-field" onkeyup="validateFirstName()">
+                                <div class="firstname-dialog"></div>
+                        </div>
+                        <div class="col">
+                            <label>Last name</label>
+                            <input type="text" class="lastname" id="lastname-field" onkeyup="validateLastName()">
+                            <div class="lastname-dialog"></div>
+                        </div>
+                    </div>
+                    <div class="label-content">
+                        <div class="row">
+                            <label>Email address</label>
+                            <input type="email" class="email" id="email-field" onkeyup="validateEmail()">
+                            <div class="email-dialog"></div>
+                        </div>
+                    </div>
+                    <div class="label-content">
+                        <div class="row">
+                            <label>Password</label>
+                            <input type="password" class="password" id="password-field">
+                            <div class="password-dialog"></div>
+                        </div>
+                    </div>
+                    <div class="label-content">
+                        <div class="row">
+                            <label>Confirm Password</label>
+                            <input type="password" class="conpassword" id="conpassword-field"> 
+                            <div class="conpass-dialog"></div>           
+                        </div>
+                    </div>
+                    <div class="label-content-row">
+                        <div class="col">
+                            <label>Country</label>
+                            <input type="text" class="country" id="country-field">
+                            <div class="country-dialog"></div>
+                        </div>
+                        <div class="col">
+                            <label>Phone number</label>
+                            <input type="number" class="phonenumber" id="phonenumber-field">
+                            <div class="phonenum-dialog"></div>
+                        </div>
+                    </div>
+                    <div class="label-content-checkbox">
+                        <input type="checkbox">
+                        <label for="">Agree to Terms and Conditions:</label>
+                    </div>
+                    
+                    <button type="button" class="btn-signup">
+                        Sign up
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
