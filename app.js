@@ -36,6 +36,7 @@ function validateFirstName() {
     } else {
         let firstNameInput = document.querySelector('#firstname-field')
         let firstNameDialog = document.querySelector('.firstname-dialog')
+        firstNameDialog.innerHTML = ''
         
         // Boarder valid
         firstNameInput.classList.add('valid')
@@ -48,7 +49,7 @@ function validateFirstName() {
          iconValid.classList.add('fa-solid', 'fa-circle-check');
          firstNameDialog.appendChild(iconValid)
 
-        return true
+        return true;
 
     }
 }
@@ -91,6 +92,7 @@ function validateLastName() {
         lastNameDialog.appendChild(iconError);
 
         return false;
+
     } else {
 
         // Show Valid Boarder
@@ -99,11 +101,13 @@ function validateLastName() {
 
         // Show Valid Icon
         let lastNameDialog = document.querySelector('.lastname-dialog')
+        lastNameDialog.innerHTML = ''
         let validIcon = document.createElement('i');
         validIcon.classList.add('fa-solid', 'fa-circle-check');
         lastNameDialog.appendChild(validIcon);
 
-        return true
+        return true;
+
     }
 }
 
@@ -125,7 +129,7 @@ function validateEmail() {
         // Remove Valid Boarder
         emailInput.classList.remove('valid')
 
-        return false
+        return false;
 
     } else if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput)) {
 
@@ -145,7 +149,7 @@ function validateEmail() {
         errorIcon.classList.add('fa-solid', 'fa-circle-xmark');
         emailDialog.appendChild(errorIcon);
 
-        return false
+        return false;
 
     } else if (emailInput === emailInput.value) {
 
@@ -165,6 +169,7 @@ function validateEmail() {
         errorIcon.classList.add('fa-solid', 'fa-circle-xmark');
         emailDialog.appendChild(errorIcon);
 
+        return false;
 
     }else {
 
@@ -184,18 +189,276 @@ function validateEmail() {
          validIcon.classList.add('fa-solid', 'fa-circle-check');
          emailDialog.appendChild(validIcon);
 
-        return true
+        return validateEmail;
+
+    }
+}
+
+
+// #---------- Validate Password
+function validatePassword(){
+    const passInputField = document.querySelector('#password-field').value;
+
+    if (passInputField === '') {
+
+        //Remove Error Message
+        let passwordDialog = document.querySelector('.password-dialog');
+        passwordDialog.innerHTML = ''
+
+        //Remove Boarder Error and Boarder Valid
+        let passInputBoarder = document.querySelector('.password');
+        passInputBoarder.classList.remove('error')
+        passInputBoarder.classList.remove('valid')
+
+        //Remove Error Icon
+
+
+        return false;
+
+    } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(passInputField)) {
+
+        //Show Error Message
+        let passwordDialog = document.querySelector('.password-dialog');
+        passwordDialog.innerHTML = 'Password should At least one uppercase letter, one lowercase letter, one digit, one special character and Minimum length of 8 characters'
+
+
+        // Show Error Boarder
+        let passInputBoarder = document.querySelector('.password');
+        passInputBoarder.classList.add('error');
+
+        //Show Error Icon
+        const errorIcon = document.createElement('i');
+        errorIcon.classList.add('fa-solid', 'fa-circle-xmark');
+        passwordDialog.appendChild(errorIcon);
+
+        //Remove Valid Boarder
+        passInputBoarder.classList.remove('valid')
+
+
+        return false;
+        
+    } else {
+
+        //Remove Error Boarder
+        let passInputBoarder = document.querySelector('.password');
+        passInputBoarder.classList.remove('error');
+
+        //Remove Error Message
+        let passwordDialog = document.querySelector('.password-dialog');
+        passwordDialog.innerHTML = '';
+
+        // Show Valid Icon
+        const validIcon = document.createElement('i');
+        validIcon.classList.add('fa-solid', 'fa-circle-check');
+        passwordDialog.appendChild(validIcon)
+
+        //Show Valid Boarder
+        passInputBoarder.classList.add('valid');
+
+
+        return true;
+
+    }
+}
+
+// #----------- Validate Confirm Password
+
+function validateConPassword(){
+    const passInputField = document.querySelector('#password-field').value;
+    const conPasswordInput = document.querySelector('#conpassword-field').value;
+    const conPassword = document.querySelector('.conpassword')
+    const conPasswordDialog = document.querySelector('.conpassword-dialog');
+
+    if (conPasswordInput === '') {
+
+        // Remove any message once empty
+        conPasswordDialog.innerHTML = '';
+
+        // Remove Boarder Error
+        conPassword.classList.remove('error');
+
+        // Remove 
+        conPassword.classList.remove('valid')
+
+        return false;
+
+    } else if (conPasswordInput != passInputField) {
+
+        // Show Error Message Dialog
+        conPasswordDialog.innerHTML = 'Password not matched';
+
+        // Show Error Boarder
+        conPassword.classList.add('error')
+
+        // Remove Valid Boarder
+        conPassword.classList.remove('valid')
+
+        // Show Icon Error
+        const errorIcon = document.createElement('i');
+        errorIcon.classList.add('fa-solid', 'fa-circle-xmark');
+        conPasswordDialog.appendChild(errorIcon);
+        
+
+        return false;
+
+    } else {
+
+        // Remove Error Boarder;
+        conPassword.classList.remove('remove');
+
+        // Add Valid Boarder
+        conPassword.classList.add('valid');
+
+        // Remove Error Message
+        conPasswordDialog.innerHTML = ''
+
+        //add Valid Icon
+        const validIcon = document.createElement('i');
+        validIcon.classList.add('fa-solid', 'fa-circle-check');
+        conPasswordDialog.append(validIcon);
+
+        return true;
+
+    }
+}
+
+// #--------- Country Validation
+
+function validateCountry(){
+
+    const countryInputField = document.querySelector('#country-field').value;
+    const countryInput = document.querySelector('.country');
+    const countryDialog = document.querySelector('.country-dialog');
+
+    if (countryInputField === '') {
+
+        // Remove show error message
+        countryDialog.innerHTML = '';
+
+        // remove Boarder Error and Boarder valid
+        countryInput.classList.remove('error')
+        countryInput.classList.remove('valid')
+
+        return false;
+
+    } else if (!/^[a-zA-Z\s]+$/.test(countryInputField)){
+
+        // Show Error Message
+        countryDialog.innerHTML = 'Country only contain letters';
+
+        // Show Error Boarder
+        countryInput.classList.add('error');
+
+        // Remove Valid boarder
+        countryInput.classList.remove('valid');
+
+        // Show Error Icon
+        const errorIcon = document.createElement('i');
+        errorIcon.classList.add('fa-solid', 'fa-circle-xmark');
+        countryDialog.appendChild(errorIcon);
+
+
+        return false;
+
+    } else {
+
+        //Remove Error message
+        countryDialog.innerHTML = '';
+
+        // Show valid Boarder
+        countryInput.classList.add('valid');
+
+         // Show valid Icon
+         const validIcon = document.createElement('i');
+         validIcon.classList.add('fa-solid', 'fa-circle-check');
+         countryDialog.appendChild(validIcon);
+ 
+
+        return true;
+
+    }
+}
+
+// #-------- VALIDATE PHONE NUMBER
+
+function validatePhone(){
+    const inputPhoneField = document.querySelector('#phonenumber-field').value;
+    const inputPhone = document.querySelector('.phonenumber');
+    const phoneDialog = document.querySelector('.phonenum-dialog')
+
+    if(inputPhoneField === ''){
+
+        // Remove Boarder Error
+        inputPhone.classList.remove('error');
+
+        // Remove Boarder Valid
+        inputPhone.classList.remove('valid');
+
+        // Remove Error Message
+        phoneDialog.innerHTML = '';
+       
+        return false;
+
+    } else if (!/(09|\+639)\d{9}$/.test(inputPhoneField)){
+
+        // Show Error Message 
+        phoneDialog.innerHTML = 'Phone number is not valid'
+
+        // Show Error Boarder
+        inputPhone.classList.add('error');
+
+        // Remove Valid Boarder
+        inputPhone.classList.remove('valid');
+
+        // Show Error Icon
+        const errorIcon = document.createElement('i');
+        errorIcon.classList.add('fa-solid', 'fa-circle-xmark');
+        phoneDialog.appendChild(errorIcon);
+
+        return false;
+
+    } else {
+
+        // Show valid Boarder
+        inputPhone.classList.add('valid');
+
+        // Remove Error Message
+        phoneDialog.innerHTML = ''
+
+        // Show Valid icon
+        const validIcon = document.createElement('i');
+        validIcon.classList.add('fa-solid', 'fa-circle-check');
+        phoneDialog.appendChild(validIcon)
+
+        return true;
 
     }
 }
 
 
 
+// FORM EVENT
+let form = document.querySelector('.btn-signup');
+
+form.addEventListener('click', (e)=>{
+
+    const isFirstNameValid = validateFirstName();
+    const isLastNameValid = validateLastName();
+    const isEmailValid = validateEmail();
+    const isPasswordValid = validatePassword();
+    const isConPassValid = validateConPassword();
+    const isCountryValid = validateCountry();
+    const isPhoneNumberValid = validatePhone();
 
 
+    if ( isFirstNameValid && isLastNameValid && isEmailValid && isPasswordValid && isConPassValid && isCountryValid && isPhoneNumberValid) {
 
+        alert("Welcome new User!")
 
+    } else {
 
-validateFirstName();
-validateLastName();
-validateEmail();
+        alert("Fill out all required field");
+
+    }
+})
+

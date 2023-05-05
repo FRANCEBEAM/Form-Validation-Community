@@ -32,8 +32,8 @@
             <div class="wrapper">
                 <h1>Sign up</h1>
                 <p>Already have an account? <a href="#" class="login">Log in instead.</a></p>
-                <form class="form-content" id="form-value">
-                    <div class="label-content-row">
+                <form class="form-content" id="form">
+                    <div class="label-content-row" id="form">
                         <div class="col">
                             <label>First name</label>
                                 <input type="text" class="firstname" id="firstname-field" onkeyup="validateFirstName()">
@@ -55,37 +55,38 @@
                     <div class="label-content">
                         <div class="row">
                             <label>Password</label>
-                            <input type="password" class="password" id="password-field">
+                            <input type="password" class="password" id="password-field" onkeyup="validatePassword()">
                             <div class="password-dialog"></div>
                         </div>
                     </div>
                     <div class="label-content">
                         <div class="row">
                             <label>Confirm Password</label>
-                            <input type="password" class="conpassword" id="conpassword-field"> 
-                            <div class="conpass-dialog"></div>           
+                            <input type="password" class="conpassword" id="conpassword-field" onkeyup="validateConPassword()"> 
+                            <div class="conpassword-dialog"></div>           
                         </div>
                     </div>
                     <div class="label-content-row">
                         <div class="col">
                             <label>Country</label>
-                            <input type="text" class="country" id="country-field">
+                            <input type="text" class="country" id="country-field" onkeyup="validateCountry()">
                             <div class="country-dialog"></div>
                         </div>
                         <div class="col">
                             <label>Phone number</label>
-                            <input type="number" class="phonenumber" id="phonenumber-field">
+                            <input type="number" class="phonenumber" id="phonenumber-field" onkeyup="validatePhone()">
                             <div class="phonenum-dialog"></div>
                         </div>
                     </div>
                     <div class="label-content-checkbox">
-                        <input type="checkbox">
+                        <input type="checkbox" required>
                         <label for="">Agree to Terms and Conditions:</label>
                     </div>
                     
                     <button type="button" class="btn-signup">
-                        Sign up
+                        Sign up 
                     </button>
+                    <!-- <a href="home.html"></a> -->
                 </form>
             </div>
         </div>

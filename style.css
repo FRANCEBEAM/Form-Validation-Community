@@ -165,7 +165,7 @@ div.left-content {
     color: var(--error);
 }
 
-.phonenumber-dialog{
+.phonenum-dialog{
     padding-top: 6px;
     font-size: 13px;
     color: var(--error);
