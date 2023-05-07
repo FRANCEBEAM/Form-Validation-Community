@@ -94,6 +94,16 @@ div.label-content-checkbox input {
     width: 20px;
     height: 20px;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
 div.label-content-checkbox {
     padding-top: 30px;
     align-items: center;
@@ -239,30 +249,30 @@ div.left-content {
 /* COL */
 .label-content-row .col .fa-solid.fa-circle-check{
     position: absolute;
-    top: 42px;
-    left: 81%;
+    top: 43px;
+    left: 87%;
     color: var(--valid);
 }
 
 .label-content-row .col .fa-solid.fa-circle-xmark{
     position: absolute;
-    top: 42px;
-    left: 81%;
+    top: 43px;
+    left: 87%;
     color: var(--error);
 }
 
 /* ROW */
 .label-content .row .fa-solid.fa-circle-check{
     position: absolute;
-    top: 42px;
-    left: 91%;
+    top: 43px;
+    left: 93%;
     color: var(--valid);
 }
 
 .label-content .row .fa-solid.fa-circle-xmark{
     position: absolute;
-    top: 42px;
-    left: 91%;
+    top: 43px;
+    left: 93%;
     color: var(--error);
 }
 
@@ -285,14 +295,14 @@ div.left-content {
     /* ROW */
     .label-content .row .fa-solid.fa-circle-check{
         position: absolute;
-        top: 42px;
+        top: 43px;
         left: 92%;
         color: var(--valid);
     }
 
     .label-content .row .fa-solid.fa-circle-xmark{
         position: absolute;
-        top: 42px;
+        top: 43px;
         left: 92%;
         color: var(--error);
     }
